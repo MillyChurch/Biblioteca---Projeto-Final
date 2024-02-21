@@ -1,0 +1,21 @@
+create database if not exists bibliotecapoo;
+use bibliotecapoo;
+
+create table usuarios(
+userId int auto_increment primary key,
+userName varchar(20),
+userPass varchar(20)
+);
+
+create table estanteDeLivros(
+nome varchar(100),
+autor varchar(100),
+genero varchar(100),
+AnoDePublicacao int,
+pagTotais int,
+pagLidas int,
+userId int not null,
+livroId int auto_increment primary key,
+foreign key (userId) references usuarios(userId)
+);
+
